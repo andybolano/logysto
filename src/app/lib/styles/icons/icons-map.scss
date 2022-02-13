@@ -1,0 +1,51 @@
+$icons-map: () !default;
+$icons-map:(
+  "home" : (value: "\e900"),
+  "newspaper" : (value: "\e904"),
+  "pencil" : (value: "\e905"),
+  "image"  : (value: "\e90d"),
+  "file-text"  : (value: "\e922"),
+  "file-empty"    : (value: "\e924"),
+  "file-picture"    : (value: "\e927"),
+  "copy"    : (value: "\e92c"),
+  "price-tag"    : (value: "\e935"),
+  "pushpin"    : (value: "\e946"),
+  "location"    : (value: "\e947"),
+  "location2"    : (value: "\e948"),
+  "compass"    : (value: "\e949"),
+  "history"    : (value: "\e94d"),
+  "user"    : (value: "\e971"),
+  "spinner11"    : (value: "\e984"),
+  "search"    : (value: "\e986"),
+  "menu"    : (value: "\e9bd"),
+  "exit"    : (value: "\ea14"),
+  "arrow-right2"    : (value: "\ea3c"),
+  "arrow-left2"    : (value: "\ea40"),
+  "circle-right"    : (value: "\ea42"),
+  "circle-left"    : (value: "\ea44"),
+  "truck": (value: "\e9b0"),
+  "smile":(value:"\e9e1"),
+  "checkmark":(value:"\ea10")
+);
+
+@font-face {
+  font-family: "logysto_icons";
+  src: url("./logysto-icons-default.woff") format("woff"),
+  url("./logysto-icons-default.svg") format("svg");
+}
+
+@each $key, $icon in $icons-map {
+  $value:    map-get($icon, value);
+  .icon-#{$key}::before {
+      -webkit-font-smoothing: antialiased;
+      content: $value;
+      display: inline-block;
+      font-family: 'logysto_icons', sans-serif !important;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 400;
+      speak: none;
+      text-rendering: auto;
+      text-transform: none;
+  }
+}

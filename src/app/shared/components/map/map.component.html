@@ -1,0 +1,19 @@
+<div class="map-container">
+  <div *ngIf="apiLoaded | async">
+    <google-map
+    height="18rem"
+    width="100%"
+    [center]="center"
+    [zoom]="zoom">
+
+    <map-marker
+    *ngFor="let position of markerPositions; let i = index"
+    [position]="position"
+    label="{{i + 1}}"
+    [options]="markerOptions">
+
+  </map-marker>
+
+    </google-map>
+  </div>
+</div>

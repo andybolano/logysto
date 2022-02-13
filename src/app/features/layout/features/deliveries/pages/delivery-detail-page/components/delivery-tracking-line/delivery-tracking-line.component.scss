@@ -1,0 +1,95 @@
+.delivery-tracking-line{
+
+  &__content{
+    display: flex;
+    width: 100%;
+    &--date{
+      margin-top: 1.8rem;
+      text-align: right;
+      width: 6rem;
+      p, h5{
+        color: var(--lgy-gray-600);
+        margin:0;
+        padding: 0;
+      }
+
+      p{
+        color: var(--lgy-gray-500);
+        font-size: 1.1rem;
+      }
+
+      h5{
+        font-size: 1.2rem;
+        line-height: 2rem;
+      }
+    }
+  }
+
+  &__item{
+    display: flex;
+    position: relative;
+    margin-left: 6rem;
+    width: 100%;
+
+      &::after {
+        background: #dadee4;
+        content: "";
+        height: 100%;
+        left: 1.8rem;
+        position: absolute;
+        top: 2rem;
+        width: 0.3rem;
+        z-index: 1;
+    }
+
+    &--icon{
+
+      margin-top: 1.5rem;
+      z-index: 2;
+
+      > div{
+        font-size:1.4rem;
+        align-items: center;
+        box-sizing: border-box;
+        background-color: var(--lgy-red-500);
+        border:0.4rem solid var(--lgy-red-400);
+        color: var(--color-primary-contrast);
+        width: 4rem;
+        height: 4rem;
+        padding: 0 0.5rem;
+        border-radius: 100%;
+        vertical-align: middle;
+        display: inline-flex;
+        justify-content: center;
+
+
+      }
+    }
+
+    &--date{
+        position: absolute;
+    }
+
+    &--status{
+      color:var(--color-primary);
+      font-weight: 600;
+      font-size: 1.4rem;
+      text-transform: capitalize;
+    }
+
+    &--content{
+      flex: 1 1 auto;
+      padding: 0 0 0 4rem;
+    }
+
+
+  }
+
+  &:last-child{
+    ::after{
+      display: none;
+      content: "";
+    }
+  }
+
+}

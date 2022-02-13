@@ -1,0 +1,218 @@
+@import './app/lib/styles/theme.scss';
+
+@each $family in PoppinsBlack,
+PoppinsBold,
+PoppinsExtraBold,
+PoppinsExtraLight,
+PoppinsLight,
+PoppinsMedium,
+PoppinsRegular,
+PoppinsSemiBold,
+PoppinsThin {
+  @font-face {
+    font-family: #{$family};
+    src: url('./assets/fonts/poppins/#{$family}.ttf') format('truetype'),
+  }
+}
+
+$variable-prefix: lgy- !default;
+
+:root {
+
+  // Colors landing
+  --color-primary: #210972;
+  --color-primary-contrast: #ffffff;
+  --color-secondary: #FA4238;
+  --color-secondary-contrast: #FFFFFF;
+
+
+  // Typografy
+  --#{$variable-prefix}font-extra-light: PoppinsExtraLight;
+  --#{$variable-prefix}font-light: PoppinsLight;
+  --#{$variable-prefix}font-thin: PoppinsThin;
+  --#{$variable-prefix}font-regular: PoppinsRegular;
+  --#{$variable-prefix}font-medium: PoppinsMedium;
+  --#{$variable-prefix}font-semi-bold: PoppinsSemiBold;
+  --#{$variable-prefix}font-bold: PoppinsBold;
+  --#{$variable-prefix}font-extra-bold: PoppinsExtraBold;
+  --#{$variable-prefix}font-black: PoppinsBlack;
+
+  // Colors
+  --#{$variable-prefix}blue: #0000FF;
+  --#{$variable-prefix}indigo: #061851;
+  --#{$variable-prefix}purple: #6336FF;
+  --#{$variable-prefix}pink: #FF0D9B;
+  --#{$variable-prefix}red: #FF3A3A;
+  --#{$variable-prefix}yellow: #FFAA00;
+  --#{$variable-prefix}green: #00E096;
+  --#{$variable-prefix}teal: #1EDC85;
+  --#{$variable-prefix}cyan: #0095FF;
+
+  // Gray-color-variables
+  --#{$variable-prefix}white: #fff;
+  --#{$variable-prefix}gray-100: #ffffff;
+  --#{$variable-prefix}gray-200: #F7F9FC;
+  --#{$variable-prefix}gray-300: #EDF1F7;
+  --#{$variable-prefix}gray-400: #E4E9F2;
+  --#{$variable-prefix}gray-500: #b5bccc;
+  --#{$variable-prefix}gray-600: #495057;
+  --#{$variable-prefix}gray-700: #2E3A59;
+  --#{$variable-prefix}gray-800: #222B45;
+  --#{$variable-prefix}gray-900: #192038;
+  --#{$variable-prefix}gray-1000: #151A30;
+  --#{$variable-prefix}black: #101426;
+
+  --#{$variable-prefix}gray-8: rgba(143, 155, 179, 0.08);
+  --#{$variable-prefix}gray-16: rgba(143, 155, 179, 0.16);
+  --#{$variable-prefix}gray-24: rgba(143, 155, 179, 0.24);
+  --#{$variable-prefix}gray-32: rgba(143, 155, 179, 0.32);
+  --#{$variable-prefix}gray-40: rgba(143, 155, 179, 0.4);
+  --#{$variable-prefix}gray-48: rgba(143, 155, 179, 0.48);
+
+  --#{$variable-prefix}blue-100: #CCCCFF;
+  --#{$variable-prefix}blue-200: #9999FF;
+  --#{$variable-prefix}blue-300: #6666FF;
+  --#{$variable-prefix}blue-400: #3F3FFF;
+  --#{$variable-prefix}blue-600: #0000DB;
+  --#{$variable-prefix}blue-700: #0000B7;
+  --#{$variable-prefix}blue-800: #000093;
+  --#{$variable-prefix}blue-900: #00007A;
+
+  --#{$variable-prefix}blue-8: rgba(0, 0, 255, 0.08);
+  --#{$variable-prefix}blue-16: rgba(0, 0, 255, 0.16);
+  --#{$variable-prefix}blue-24: rgba(0, 0, 255, 0.24);
+  --#{$variable-prefix}blue-32: rgba(0, 0, 255, 0.32);
+  --#{$variable-prefix}blue-40: rgba(0, 0, 255, 0.4);
+  --#{$variable-prefix}blue-48: rgba(0, 0, 255, 0.48);
+
+  --#{$variable-prefix}indigo-100: #C8D8F6;
+  --#{$variable-prefix}indigo-200: #95B1ED;
+  --#{$variable-prefix}indigo-300: #5A7ACA;
+  --#{$variable-prefix}indigo-400: #2E4996;
+  --#{$variable-prefix}indigo-600: #041245;
+  --#{$variable-prefix}indigo-700: #030D3A;
+  --#{$variable-prefix}indigo-800: #030D3A;
+  --#{$variable-prefix}indigo-900: #030D3A;
+
+  --#{$variable-prefix}indigo-8: rgba(6, 24, 81, 0.08);
+  --#{$variable-prefix}indigo-16: rgba(6, 24, 81, 0.16);
+  --#{$variable-prefix}indigo-24: rgba(6, 24, 81, 0.24);
+  --#{$variable-prefix}indigo-32: rgba(6, 24, 81, 0.32);
+  --#{$variable-prefix}indigo-40: rgba(6, 24, 81, 0.4);
+  --#{$variable-prefix}indigo-48: rgba(6, 24, 81, 0.48);
+
+  --#{$variable-prefix}purple-100: #E3D6FF;
+  --#{$variable-prefix}purple-200: #C6AEFF;
+  --#{$variable-prefix}purple-300: #A786FF;
+  --#{$variable-prefix}purple-400: #8D68FF;
+  --#{$variable-prefix}purple-600: #4B27DB;
+  --#{$variable-prefix}purple-700: #361BB7;
+  --#{$variable-prefix}purple-800: #251193;
+  --#{$variable-prefix}purple-900: #190A7A;
+
+  --#{$variable-prefix}purple-8: rgba(98, 54, 255, 0.08);
+  --#{$variable-prefix}purple-16: rgba(98, 54, 255, 0.16);
+  --#{$variable-prefix}purple-24: rgba(98, 54, 255, 0.24);
+  --#{$variable-prefix}purple-32: rgba(98, 54, 255, 0.32);
+  --#{$variable-prefix}purple-40: rgba(98, 54, 255, 0.4);
+  --#{$variable-prefix}purple-48: rgba(98, 54, 255, 0.48);
+
+  --#{$variable-prefix}pink-100: #FFCED7;
+  --#{$variable-prefix}pink-200: #FF9EBA;
+  --#{$variable-prefix}pink-300: #FF6DA6;
+  --#{$variable-prefix}pink-400: #FF49A1;
+  --#{$variable-prefix}pink-600: #DB0999;
+  --#{$variable-prefix}pink-700: #B70691;
+  --#{$variable-prefix}pink-800: #930483;
+  --#{$variable-prefix}pink-900: #7A0278;
+
+  --#{$variable-prefix}pink-8: rgba(255, 13, 154, 0.08);
+  --#{$variable-prefix}pink-16: rgba(255, 13, 154, 0.16);
+  --#{$variable-prefix}pink-24: rgba(255, 13, 154, 0.24);
+  --#{$variable-prefix}pink-32: rgba(255, 13, 154, 0.32);
+  --#{$variable-prefix}pink-40: rgba(255, 13, 154, 0.4);
+  --#{$variable-prefix}pink-48: rgba(255, 13, 154, 0.48);
+
+  --#{$variable-prefix}red-100: #FFE7D8;
+  --#{$variable-prefix}red-200: #FFCAB2;
+  --#{$variable-prefix}red-300: #FFA68B;
+  --#{$variable-prefix}red-400: #FF846F;
+  --#{$variable-prefix}red-500: #e74749;
+  --#{$variable-prefix}red-600: #DB2E30;
+  --#{$variable-prefix}red-700: #B71F2E;
+  --#{$variable-prefix}red-800: #93142B;
+  --#{$variable-prefix}red-900: #7A0C29;
+
+  --#{$variable-prefix}red-8: rgba(255, 58, 58, 0.08);
+  --#{$variable-prefix}red-16: rgba(255, 58, 58, 0.16);
+  --#{$variable-prefix}red-24: rgba(255, 58, 58, 0.24);
+  --#{$variable-prefix}red-32: rgba(255, 58, 58, 0.32);
+  --#{$variable-prefix}red-40: rgba(255, 58, 58, 0.4);
+  --#{$variable-prefix}red-48: rgba(255, 58, 58, 0.48);
+
+  --#{$variable-prefix}yellow-100: #FFFDF2;
+  --#{$variable-prefix}yellow-200: #FFF1C2;
+  --#{$variable-prefix}yellow-300: #FFE59E;
+  --#{$variable-prefix}yellow-400: #FFC94D;
+  --#{$variable-prefix}yellow-600: #DB8B00;
+  --#{$variable-prefix}yellow-700: #B86E00;
+  --#{$variable-prefix}yellow-800: #945400;
+  --#{$variable-prefix}yellow-900: #703C00;
+
+  --#{$variable-prefix}yellow-8: rgba(255, 170, 0, 0.08);
+  --#{$variable-prefix}yellow-16: rgba(255, 170, 0, 0.16);
+  --#{$variable-prefix}yellow-24: rgba(255, 170, 0, 0.24);
+  --#{$variable-prefix}yellow-32: rgba(255, 170, 0, 0.32);
+  --#{$variable-prefix}yellow-40: rgba(255, 170, 0, 0.4);
+  --#{$variable-prefix}yellow-48: rgba(255, 170, 0, 0.48);
+
+  --#{$variable-prefix}green-100: #EDFFF3;
+  --#{$variable-prefix}green-200: #B3FFD6;
+  --#{$variable-prefix}green-300: #8CFAC7;
+  --#{$variable-prefix}green-400: #51F0B0;
+  --#{$variable-prefix}green-600: #00B383;
+  --#{$variable-prefix}green-700: #008F72;
+  --#{$variable-prefix}green-800: #007566;
+  --#{$variable-prefix}green-900: #00524C;
+
+  --#{$variable-prefix}green-8: rgba(0, 224, 150, 0.08);
+  --#{$variable-prefix}green-16: rgba(0, 224, 150, 0.16);
+  --#{$variable-prefix}green-24: rgba(0, 224, 150, 0.24);
+  --#{$variable-prefix}green-32: rgba(0, 224, 150, 0.32);
+  --#{$variable-prefix}green-40: rgba(0, 224, 150, 0.4);
+  --#{$variable-prefix}green-48: rgba(0, 224, 150, 0.48);
+
+  --#{$variable-prefix}teal-100: #D1FDD7;
+  --#{$variable-prefix}teal-200: #A4FBB9;
+  --#{$variable-prefix}teal-300: #75F4A1;
+  --#{$variable-prefix}teal-400: #52EA95;
+  --#{$variable-prefix}teal-600: #15BD81;
+  --#{$variable-prefix}teal-700: #0F9E79;
+  --#{$variable-prefix}teal-800: #097F6C;
+  --#{$variable-prefix}teal-900: #056963;
+
+  --#{$variable-prefix}teal-8: rgba(30, 220, 135, 0.08);
+  --#{$variable-prefix}teal-16: rgba(30, 220, 135, 0.16);
+  --#{$variable-prefix}teal-24: rgba(30, 220, 135, 0.24);
+  --#{$variable-prefix}teal-32: rgba(30, 220, 135, 0.32);
+  --#{$variable-prefix}teal-40: rgba(30, 220, 135, 0.4);
+  --#{$variable-prefix}teal-48: rgba(30, 220, 135, 0.48);
+
+  --#{$variable-prefix}cyan-100: #F2F8FF;
+  --#{$variable-prefix}cyan-200: #C7E2FF;
+  --#{$variable-prefix}cyan-300: #94CBFF;
+  --#{$variable-prefix}cyan-400: #42AAFF;
+  --#{$variable-prefix}cyan-600: #006FD6;
+  --#{$variable-prefix}cyan-700: #0057C2;
+  --#{$variable-prefix}cyan-800: #0041A8;
+  --#{$variable-prefix}cyan-900: #002885;
+
+  --#{$variable-prefix}cyan-8: rgba(0, 149, 255, 0.08);
+  --#{$variable-prefix}cyan-16: rgba(0, 149, 255, 0.16);
+  --#{$variable-prefix}cyan-24: rgba(0, 149, 255, 0.24);
+  --#{$variable-prefix}cyan-32: rgba(0, 149, 255, 0.32);
+  --#{$variable-prefix}cyan-40: rgba(0, 149, 255, 0.4);
+  --#{$variable-prefix}cyan-48: rgba(0, 149, 255, 0.48);
+
+}
+

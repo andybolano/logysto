@@ -1,0 +1,28 @@
+{
+  "moduleDelivery" : {
+    "delivery":"Entrega",
+    "detail": {
+      "title":"Información <strong>del servicio</strong>",
+      "assignedMessenger" : "Mensaje asignado",
+      "pickedUpPoint": "Punto de recogida",
+      "deliveryPoint" : "Punto de entrega",
+      "noOrder":"No. Orden",
+      "notInclude":"No incluido",
+      "noGuide":"No. Guía"
+    },
+    "status":{
+      "available":"disponible",
+      "accepted":"aceptado",
+      "collected":"recolectado",
+      "in_transit":"en tránsito",
+      "delivered": "entregado"
+    }
+  },
+  "contact": "Contacto",
+  "requestSend":"Solicitar envío",
+  "services":"Servicios",
+  "myAccount":"Mi cuenta",
+  "logout":"Cerrar Session",
+  "saludo":"Hola <strong>{{name}}</strong>, cuantos pedidos realizaras hoy?"
+
+}

@@ -1,0 +1,7 @@
+<app-sidebar [hiddenSidebar]="hiddenSidebar"></app-sidebar>
+<main class="content-layout" [ngClass]="{'content-layout--responsive': hiddenSidebar}">
+  <app-navbar [hiddenSidebar]="hiddenSidebar" (toggleSidebar)="toggleSidebar($event)"></app-navbar>
+  <div class="content-layout--main">
+    <router-outlet></router-outlet>
+  </div>
+</main>

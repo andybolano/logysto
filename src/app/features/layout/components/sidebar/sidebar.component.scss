@@ -1,0 +1,93 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  background-color: var(--lgy-white);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 18rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid var(--lgy-gray-500);
+  transition: all 0.2s ease-out;
+
+  &--hidden {
+    transition: all 0.2s ease-out;
+    transform: translate(-18rem, 0);
+  }
+
+  > app-logo {
+    margin: 0.3rem auto;
+  }
+
+  &-menu {
+    text-align: center;
+    padding: 0;
+
+    &__item {
+      list-style: none;
+      padding: 1rem 2rem;
+
+      > div {
+        padding: 0;
+        text-align: left;
+
+        &.active {
+          border-radius: 2rem;
+          color: white;
+          padding: 1.4rem 0;
+          > * {
+            color: white;
+          }
+        }
+
+        > a {
+          text-decoration: none;
+          > span{
+            margin-right: 1rem;
+          }
+        }
+
+        > * {
+          color: var(--lgy-gray-600);
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  > footer {
+    padding: 2rem;
+    margin-top: auto;
+    font-size: 1.2rem;
+    > span,
+    strong {
+      display: block;
+      color: white;
+    }
+    > a {
+      display: block;
+      color: var(--lgy-gray-600);
+    }
+  }
+}
+
+nav {
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: slide 0.5s forwards;
+  animation-delay: 2s;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
+  }
+}

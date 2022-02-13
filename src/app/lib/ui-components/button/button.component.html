@@ -1,0 +1,17 @@
+<button
+  class="lgy-btn"
+  [attr.id]="buttonId"
+  [attr.type]="type"
+  [ngStyle]="style"
+  [disabled]="disabled"
+  [class]="styleClass"
+  (click)="onClick.emit($event)"
+  (focus)="onFocus.emit($event)"
+  (blur)="onBlur.emit($event)"
+>
+  <ng-content></ng-content>
+
+  <span *ngIf="label"  class="lgy-button-label">
+    {{ label || "&nbsp;" }}
+  </span>
+</button>

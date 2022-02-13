@@ -1,0 +1,26 @@
+<div class="delivery-avaible">
+  <div class="delivery-avaible__head">
+
+    <div class="delivery-avaible__head--no-order">
+      <p class="lgy-paragraph-1">{{'moduleDelivery.detail.noOrder' | translate}} : {{ orderNumber ? orderNumber : 'moduleDelivery.detail.notInclude' | translate}}</p>
+      <p class="lgy-paragraph-2">{{locations[1].details}}</p>
+    </div>
+
+    <div class="delivery-avaible__head--no-guide">
+      <p class="lgy-paragraph-1">{{'moduleDelivery.detail.noGuide' | translate}} :</p>
+      <p class="lgy-paragraph-1">{{vueltapGuide}}</p>
+    </div>
+
+  </div>
+
+  <div class="delivery-avaible__map">
+    <app-map [locations]="locations"></app-map>
+  </div>
+
+<div *ngFor="let location of locations; let i = index" class="delivery-avaible__address">
+    <div class="badge">{{i + 1}}</div>
+    <p class="lgy-paragraph-1">{{location.address}}</p>
+</div>
+
+   <p class="lgy-paragraph-1">{{'contact' | translate}} : {{contact.name}} </p>
+</div>

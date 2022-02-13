@@ -1,0 +1,55 @@
+
+    <div class="delivery-tracking-line" *ngFor="let trace of deliveryDetail.trace">
+
+      <div class="delivery-tracking-line__content">
+
+          <div class="delivery-tracking-line__content--date">
+            <p>{{trace.date | date: 'MM/dd/yyyy'}}</p>
+            <h5>{{trace.date | date: 'shortTime'}}</h5>
+          </div>
+
+        <div class="delivery-tracking-line__item">
+
+          <div class="delivery-tracking-line__item--icon">
+              <div class="icon-location"></div>
+          </div>
+
+          <div class="delivery-tracking-line__item--content">
+            <app-card [ngSwitch]="trace.status">
+              <p class="delivery-tracking-line__item--status" *ngIf="trace.status !== deliveryStatus.AVAILABLE">
+                {{ "moduleDelivery.status." + trace.status | translate }}
+              </p>
+
+              <div *ngSwitchCase="deliveryStatus.AVAILABLE">
+                  <app-delivery-available
+                  [orderNumber]="deliveryDetail.order_number"
+                  [contact]="deliveryDetail.contact"
+                  [locations]="deliveryDetail.locations"
+                  [vueltapGuide]="deliveryDetail.vueltap_guide">
+
+                  </app-delivery-available>
+              </div>
+
+              <div *ngSwitchCase="deliveryStatus.ACCEPTED">
+                <app-delivery-messenger [messenger]="deliveryDetail.messenger"></app-delivery-messenger>
+              </div>
+
+              <div *ngSwitchCase="deliveryStatus.COLLECTED">
+                  <p class="lgy-paragraph-1">{{deliveryDetail.locations[0].address}}</p>
+                  <p class="lgy-paragraph-2">{{"moduleDelivery.detail.pickedUpPoint"  | translate }}</p>
+              </div>
+
+              <div *ngSwitchCase="deliveryStatus.DELIVERED">
+                <p class="lgy-paragraph-1">{{deliveryDetail.locations[1].address}}</p>
+                <p class="lgy-paragraph-2">{{"moduleDelivery.detail.deliveryPoint"  | translate }}</p>
+              </div>
+
+            </app-card>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>

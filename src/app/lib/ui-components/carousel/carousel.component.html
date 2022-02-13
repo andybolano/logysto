@@ -1,0 +1,19 @@
+<section class="carousel">
+  <div #slides class="carousel__slides-container">
+    <ng-content></ng-content>
+    <ng-container *ngIf="isActionsActive" >
+      <a class="carousel__slides-container--prev" (click)="plusSlides(-1)">&#10094;</a>
+      <a class="carousel__slides-container--next" (click)="plusSlides(1)">&#10095;</a>
+    </ng-container>
+  </div>
+  <div class="carousel__slider-container">
+    <span 
+      *ngFor="let line of amountLines; let i = index"    
+      [ngClass]="{'active': (slideIndex-1) === i}" 
+      (click)="currentSlide(i)">
+    </span>
+  </div>
+</section>
+
+
+  
