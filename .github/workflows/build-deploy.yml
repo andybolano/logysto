@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -18,14 +18,14 @@ jobs:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-node-    
+          ${{ runner.os }}-node-
     - name: Build
       run: |
         npm install
         npm run-script deploy
     - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+      uses: andybolano/logysto@releases/v3
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
-        FOLDER: dist/angular-ci-cd
+        FOLDER: dist/logysto
