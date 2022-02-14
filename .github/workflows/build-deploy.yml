@@ -24,7 +24,7 @@ jobs:
         npm install
         npm run-script deploy
     - name: Deploy
-      uses: andybolano/logysto@releases/v3
+      uses: andybolano/logysto
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
