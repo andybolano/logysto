@@ -20,7 +20,7 @@
                 {{ "moduleDelivery.status." + trace.status | translate }}
               </p>
 
-              <div *ngSwitchCase="deliveryStatus.AVAILABLE">
+              <ng-container *ngSwitchCase="deliveryStatus.AVAILABLE">
                   <app-delivery-available
                   [orderNumber]="deliveryDetail.order_number"
                   [contact]="deliveryDetail.contact"
@@ -28,21 +28,30 @@
                   [vueltapGuide]="deliveryDetail.vueltap_guide">
 
                   </app-delivery-available>
-              </div>
+              </ng-container>
 
-              <div *ngSwitchCase="deliveryStatus.ACCEPTED">
+              <ng-container *ngSwitchCase="deliveryStatus.ACCEPTED">
                 <app-delivery-messenger [messenger]="deliveryDetail.messenger"></app-delivery-messenger>
-              </div>
+              </ng-container>
 
-              <div *ngSwitchCase="deliveryStatus.COLLECTED">
+              <ng-container *ngSwitchCase="deliveryStatus.COLLECTED">
                   <p class="lgy-paragraph-1">{{deliveryDetail.locations[0].address}}</p>
                   <p class="lgy-paragraph-2">{{"moduleDelivery.detail.pickedUpPoint"  | translate }}</p>
-              </div>
+              </ng-container>
 
-              <div *ngSwitchCase="deliveryStatus.DELIVERED">
+              <ng-container *ngSwitchCase="deliveryStatus.DELIVERED">
                 <p class="lgy-paragraph-1">{{deliveryDetail.locations[1].address}}</p>
                 <p class="lgy-paragraph-2">{{"moduleDelivery.detail.deliveryPoint"  | translate }}</p>
-              </div>
+
+                <lgy-button
+                styleClass="outline" class="options"
+                (onClick)="viewDeliverEvidenceImages();">
+                  <span class="icon-image"></span>
+                </lgy-button>
+
+              </ng-container>
+
+
 
             </app-card>
           </div>

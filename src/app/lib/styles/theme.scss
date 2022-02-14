@@ -81,9 +81,7 @@ $black    : var(--#{$variable-prefix}black)    !default;
 @import "base/base";
 
 @import "./components/badge";
-
 @import "./components/button";
 @import "./components/carousel";
 @import "./components/modal";
-
 @import "./icons/icons-map.scss";

@@ -7,13 +7,10 @@
     </ng-container>
   </div>
   <div class="carousel__slider-container">
-    <span 
-      *ngFor="let line of amountLines; let i = index"    
-      [ngClass]="{'active': (slideIndex-1) === i}" 
+    <span
+      *ngFor="let line of amountLines; let i = index"
+      [ngClass]="{'active': (slideIndex-1) === i}"
       (click)="currentSlide(i)">
     </span>
   </div>
 </section>
-
-
-  

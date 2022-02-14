@@ -1,17 +1,15 @@
-import {AfterViewInit,ChangeDetectionStrategy,ChangeDetectorRef,Component,ElementRef,Input,OnDestroy,OnInit,ViewChild} from '@angular/core';
+import {AfterViewInit,ChangeDetectionStrategy,ChangeDetectorRef,Component,ElementRef,Input,OnInit,ViewChild} from '@angular/core';
 
 @Component( {
   selector: 'lgy-carousel',
   templateUrl: './carousel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 } )
-export class CarouselComponent implements OnInit,AfterViewInit,OnDestroy {
+export class CarouselComponent implements OnInit,AfterViewInit {
   @ViewChild( 'slides',{static: true} ) slides: ElementRef;
   @Input() isActionsActive: boolean = true;
-  @Input() slideIntervalSeconds: number = 0;
   public slideIndex: number = 1;
   public amountLines: unknown[];
-  private interval: number | undefined;
 
   constructor (
     private readonly detectChanges: ChangeDetectorRef
@@ -24,33 +22,13 @@ export class CarouselComponent implements OnInit,AfterViewInit,OnDestroy {
   ngAfterViewInit(): void {
     this.addEffectToSlides();
     this.showSlides();
-    this.createIntervalTimer();
   }
 
-  ngOnDestroy(): void {
-    this.clearTimer();
-  }
 
   private fillArraySlider(): void {
     this.amountLines = Array( this.slides.nativeElement.children.length ).fill( 'line' );
   }
 
-  private createIntervalTimer(): void {
-    const timeBase: number = 1000;
-    if( this.slideIntervalSeconds ) {
-      this.clearTimer();
-      this.interval = window.setInterval( () => {
-        this.slideIndex++;
-        this.showSlides();
-      },this.slideIntervalSeconds * timeBase );
-    }
-  }
-
-  private clearTimer(): void {
-    if( this.interval ) {
-      clearInterval( this.interval );
-    }
-  }
 
   private addEffectToSlides() {
     for( let i = 0; i < this.amountSlides; i++ ) {
@@ -81,7 +59,6 @@ export class CarouselComponent implements OnInit,AfterViewInit,OnDestroy {
       slides[ i ].style.display = 'none';
     }
     slides[ this.slideIndex - 1 ].style.display = 'block';
-    this.createIntervalTimer();
     this.detectChanges.detectChanges();
   }
 

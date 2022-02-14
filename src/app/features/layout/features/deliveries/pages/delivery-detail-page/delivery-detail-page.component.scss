@@ -1,7 +1,15 @@
 .delivery-detail{
-  padding: 1rem 3rem;
+  padding: 0.5rem;
+
+  @media(min-width: 672px) {
+    padding: 1rem 3rem;
+  }
+
   &__header{
-    padding-left: 20rem;
+    padding-left: 0.5rem;
     margin: 2rem auto;
+    @media(min-width: 672px) {
+      padding-left: 20rem;
+    }
   }
 }

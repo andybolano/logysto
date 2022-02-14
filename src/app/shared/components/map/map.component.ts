@@ -6,6 +6,10 @@ import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 
+interface Position  {
+  lat:number,
+  lng: number
+}
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -24,9 +28,6 @@ export class MapComponent implements OnInit {
     icon: '../assets/images/pin.png'
   };
 
-
-
-
   constructor(
     httpClient: HttpClient
     ) {
@@ -38,24 +39,28 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit(): void {
-     this.setCenterPosition(this.locations[0]);
-      this.loadLocations();
+     this.setValues();
   }
 
-  private loadLocations(): void{
+  private setValues(): void{
+    this.center = this.setCenterPosition(this.locations);
+    this.markerPositions = this.loadLocations();
+  }
 
-  this.locations.forEach((location:Location)=>{
-    this.markerPositions.push({
-      lat: location.lat,
-      lng: location.lon
+  private loadLocations(): Array<Position> {
+    return this.locations.map((location:Location)=> {
+      return {
+        lat: location.lat,
+        lng: location.lon
+      };
     });
-  })
   }
 
-  private setCenterPosition(location:Location): void{
-    this.center = {
-      lat: location.lat,
-      lng: location.lon
+  private setCenterPosition(location:Location[]): Position{
+    const FIRST_POSITION: number = 0;
+    return {
+      lat: location[FIRST_POSITION].lat,
+      lng: location[FIRST_POSITION].lon
     };
   }
 

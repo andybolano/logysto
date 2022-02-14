@@ -1,0 +1,16 @@
+<section class="modal-images">
+  <lgy-carousel>
+    <div class="slide" *ngFor="let image of images">
+        <img [src]="image" [alt]="'notLoadImage' | translate">
+    </div>
+  </lgy-carousel>
+
+  <div>
+    <lgy-button
+        styleClass="outline"
+        [label]="'close' | translate"
+        (onClick)="close()">
+    </lgy-button>
+  </div>
+</section>
+

@@ -1,3 +1,5 @@
+import { CarouselImagesModule } from './../../../../shared/components/carousel-images/carousel-images.module';
+import { ButtonModule } from '@lib/ui-components/button';
 import { MapModule } from '@shared/components/map/map.module';
 import { AvatarModule } from '@shared/components/avatar';
 import { CardModule } from '@shared/components/card';
@@ -17,7 +19,9 @@ import { DeliveryRoutingModule } from './deliveries-routing.module';
     CardModule,
     TitleModule,
     AvatarModule,
-    MapModule
+    MapModule,
+    ButtonModule,
+    CarouselImagesModule
   ]
 })
 export class DeliveriesModule {}

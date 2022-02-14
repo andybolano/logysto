@@ -1,3 +1,4 @@
+import { ModalModule } from '@lib/ui-components/modal';
 import { ButtonModule } from '@lib/ui-components/button';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -16,7 +17,8 @@ import { LogoModule } from '@shared/components/logo';
     TranslateFacadeModule,
     LayoutRoutingModule,
     LogoModule,
-    ButtonModule
+    ButtonModule,
+    ModalModule
   ],
   exports: [LayoutComponent, ...LAYOUT_COMPONENTS]
 })

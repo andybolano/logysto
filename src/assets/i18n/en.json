@@ -23,6 +23,7 @@
   "services":"Servicios",
   "myAccount":"Mi cuenta",
   "logout":"Cerrar Session",
-  "saludo":"Hola <strong>{{name}}</strong>, cuantos pedidos realizaras hoy?"
-
+  "saludo":"Hola <strong>{{name}}</strong>, cuantos pedidos realizaras hoy?",
+  "notLoadImage":"No se pudo cargar la imagen",
+  "close":"Cerrar"
 }
