@@ -8,14 +8,14 @@ const maxSize: number = 820;
   styleUrls: [ './layout.component.scss' ]
 } )
 export class LayoutComponent implements OnInit {
-  public hiddenSidebar: boolean = window.screen.width < maxSize;
+  public hiddenSidebar: boolean = window.innerWidth < maxSize;
 
   ngOnInit(): void {
     this.mobileViewConf();
   }
 
   private mobileViewConf(): void {
-    window.onresize = () => this.toggleSidebar( window.screen.width < maxSize );
+    window.onresize = () => this.toggleSidebar(  window.innerWidth < maxSize );
   }
 
   public toggleSidebar( showSidebar: boolean ): void {
