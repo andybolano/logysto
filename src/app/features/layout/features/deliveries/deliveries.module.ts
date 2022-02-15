@@ -1,4 +1,4 @@
-import { CarouselImagesModule } from './../../../../shared/components/carousel-images/carousel-images.module';
+import { CarouselImagesModule } from '@shared/components/carousel-images/carousel-images.module';
 import { ButtonModule } from '@lib/ui-components/button';
 import { MapModule } from '@shared/components/map/map.module';
 import { AvatarModule } from '@shared/components/avatar';
