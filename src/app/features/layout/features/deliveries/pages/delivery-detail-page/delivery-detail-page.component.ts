@@ -50,7 +50,7 @@ export class DeliveryDetailPageComponent implements OnInit {
   }
 
   private error( error: HttpErrorResponse ): Observable<never> {
-    alert(JSON.stringify(error))
+    alert(JSON.stringify(error));
     return throwError( error );
   }
 
